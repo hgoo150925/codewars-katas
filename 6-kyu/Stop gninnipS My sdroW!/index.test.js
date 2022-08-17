@@ -11,3 +11,7 @@ test('Test 2', () => {
 test('Test 3', () => {
   expect(spinWords('This is another test')).toBe('This is rehtona test');
 });
+
+test('Test 4 ', () => {
+  expect(spinWords('Welcome')).toBe('emocleW');
+});
