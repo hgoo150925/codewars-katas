@@ -3,23 +3,34 @@
     Age Range Compatibility Equation
   
   Description:
-    Timmy & Sarah think they are in love, but around where they live, 
-    they will only know once they pick a flower each. 
+    Everybody knows the classic "half your age plus seven" dating rule that a lot of people follow (including myself). It's the 'recommended' age range in which to date someone.
+    minimum age <= your age <= maximum age
     
-    If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
-    Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
-   
+    # Task
+    Given an integer (1 <= n <= 100) representing a person's age, return their minimum and maximum age range.
+    This equation doesn't work when the age <= 14, so use this equation instead:
+    min = age - 0.10 * age
+    max = age + 0.10 * age
+    
+    You should floor all your answers so that an integer is given instead of a float (which doesn't represent age).
+    Return your answer in the form [min]-[max]
+  
+    Examples:
+    age = 27   =>   20-40
+    age = 5    =>   4-5
+    age = 17   =>   15-20
+  
     Kata Link:
-    https://www.codewars.com/kata/opposites-attract
+    https://www.codewars.com/kata/age-range-compatibility-equation
 */
+const datingRange = age => {
+  const min = Math.floor(age - 0.1 * age);
+  const max = Math.floor(age + 0.1 * age);
 
-const isEven = num => num % 2 === 0;
+  const rangeAgeMin = Math.floor(age / 2 + 7);
+  const rangeAgeMax = (age - 7) * 2;
 
-const lovefunc = (flower1, flower2) => {
-  return (
-    (isEven(flower1) && !isEven(flower2)) ||
-    (!isEven(flower1) && isEven(flower2))
-  );
+  return age <= 14 ? `${min}-${max}` : `${rangeAgeMin}-${rangeAgeMax}`;
 };
 
-module.exports = lovefunc;
+module.exports = datingRange;
