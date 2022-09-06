@@ -1,4 +1,4 @@
-const datingRange = require('.');
+const lovefunc = require('.');
 
 describe('Dating Range...', () => {
   test('Retorna 15-20', () => {
