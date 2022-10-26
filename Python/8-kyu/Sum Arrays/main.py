@@ -24,9 +24,11 @@ Advanced users may find this extremely easy and can easily write this in one lin
 
 Link: https://www.codewars.com/kata/sum-arrays
 """
+
+
 def sum_array(a):
     suma = 0
     for i in a:
         suma += i
-        
+
     return suma
